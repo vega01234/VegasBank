@@ -1,0 +1,273 @@
+/* Importar Tipogrfias */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Estilo General */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Estilo Body y Logo */
+body {
+    background-color: #24252A;
+    font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+}
+
+/* Estilos Textos */
+
+.subtitle, .title {
+    color: #0074e4;
+}
+
+.text {
+    color: #edf0f1;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Barra de Navegacion */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.nav_list, .list_general {
+    list-style: none;
+}
+
+.nav_list li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.link_ref {
+    color: #edf0f1;
+    transition: all 0.3s ease 0s;
+}
+
+.link_ref:hover {
+    color: #0074e4;
+}
+
+.link_login button, .link_newuser button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 25px;
+    background-color: rgba(0, 116, 228, 0.8);
+    color: #edf0f1;
+    border: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.link_login button:hover, .link_newuser button:hover{
+    background-color: rgba(0, 116, 228, 1);
+}
+
+.link_logout button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 25px;
+    background-color: rgba(219, 22, 22, 0.8);
+    color: #edf0f1;
+    border: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.link_logout button:hover {
+    background-color: rgba(219, 22, 22, 1);
+}
+
+/* Estilo Aticle */
+.article_general {
+    margin: 2% 15%;
+    text-align: justify;
+}
+
+/* Estilo Formularios */
+.div_forms {
+    background-color: #E5E5E5;
+    max-width: 550px;
+    width: 85%;
+    margin: auto;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.header_forms {
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.form_group{
+    padding-bottom: 15px;
+}
+
+.form_btns_send {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 25px;
+}
+
+.form_label {
+    display: block;
+    font-weight: 700;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.form_div_input {
+    position: relative;
+}
+
+.form_input {
+    width: 100%;
+    height: 35px;
+    background-color: white;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    line-height: 35px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.form_input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.msg_input_error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.msg_input_error-active {
+    display: block;
+}
+
+.form_icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.form_msg_erorr {
+    height: 40px;
+    background-color: #F66060;
+    margin: 0 0 15px 0;
+    padding: 0 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.form_msg_erorr-active {
+    display: flex;
+} 
+
+.form_btn_send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_btn {
+    height: 35px;
+    line-height: 35px;
+    width: 30%;
+    background-color: rgba(0, 116, 228, 0.8);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.form_btn:hover {
+    background-color: rgba(0, 116, 228, 1);
+}
+
+.form_msg_succes {
+    font-size: 14px;
+    color: #119000;
+    display: none;
+}
+
+.form_msg_succes-active {
+    display: block;
+}
+
+/* Estilo Tabla Historial de Movimientos */
+.container_table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.his_mov {
+    background-color: white;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 2px black;
+    padding: 3px;
+    text-align: center;
+}
+
+.head_celd {
+    background-color: #0075FF;
+    padding: 5px;
+    color: white;
+}
+
+/* Estilo Footer */
+footer {
+    color: #edf0f1;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Validacion Input */
+.form_group_true .form_icon {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.form_group_false .form_label, .form_group_false .form_icon{
+    color: #bb2929;
+    opacity: 1;
+}
+
+.form_group_false .form_input{
+    border: 3px solid #bb2929;
+}
