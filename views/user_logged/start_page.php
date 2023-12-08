@@ -2,7 +2,7 @@
 
 require("../../controller/php/database.php");
 require("../../controller/php/check_loggin.php");
-require("../../controller/php/querys.php");
+// require("../../controller/php/querys.php");
 
 ?>
 <!DOCTYPE html>

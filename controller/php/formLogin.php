@@ -1,6 +1,7 @@
 <?php 
 
 require('database.php');
+session_start();
 
 $validLogin['success'] = array('success' => false, 'msg' => '');
 

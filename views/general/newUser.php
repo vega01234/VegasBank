@@ -27,7 +27,7 @@
             <h2 class="subtitle">Crear Cuenta</h2>
             <p>Completa el Formulario Correctamente.</p>
         </div>
-        <form action="../../controller/php/formNewUser.php" method="post" class="form_new_user" id="form_new_user">
+        <form class="form_new_user" id="form_new_user">
             <!-- Nombre -->
             <div class="form_group" id="group_name">
                 <label for="name" class="form_label">Nombre</label>
@@ -80,7 +80,7 @@
             <!-- Boton -->
             <div class="form_btns_send">
                 <button type="submit" class="form_btn" name="newUser">Registrarse</button>
-                <button type="reset" class="form_btn">Limpiar</button>
+                <button type="reset" class="form_btn" id="btn_clear">Limpiar</button>
                 <p class="form_msg_succes" id="form_msg_succes">El usuario se registro exitosamente.</p>
             </div>
         </form>
@@ -89,7 +89,9 @@
     <footer>
         <p>&copy; 2023 Vega's Bank - Todos los derechos reservados</p>
     </footer>
-    <script src="../../controller/js/form_new_user.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/e9597f5981.js" crossorigin="anonymous"></script>
+    <script src="../../controller/js/form_new_user.js"></script>
 </body>
 </html>

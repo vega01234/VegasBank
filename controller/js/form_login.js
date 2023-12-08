@@ -36,7 +36,6 @@ const validExpresionFields = () => {
     return Object.values(fields).every(field => field === true);
 }
 
-//Switch para Cambiar Diseño Correcto/Error
 const validFormLogin = (e) => {
     switch (e.target.name) {
         case "username":
@@ -74,8 +73,6 @@ form.addEventListener('submit', function (e) {
     var password = $('#password').val();
 
     if(username === '' || password === '' || !validExpresionFields()){
-
-        e.preventDefault();
 
         Swal.fire({
             title: '¡Error al Llenar el Formulario!',
@@ -132,7 +129,7 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validFormLogin);
 });
 
-// Boton Lipiar Campos
+// Boton Limpiar Campos
 btnClear.addEventListener('click', () => {
     
     clearForm();
