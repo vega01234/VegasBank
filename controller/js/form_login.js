@@ -1,5 +1,6 @@
 const form = document.getElementById('form_login');
 const inputs = document.querySelectorAll('#form_login input');
+const btnClear = document.querySelector('#btn_clear');
 
 const validExpresion = {
     username: /^[a-zA-Z0-9\_\-]{4,16}$/, 
@@ -9,6 +10,26 @@ const validExpresion = {
 const fields = {
     username: false,
     password: false
+}
+
+//Limpiar Campos y Estilos Formulario
+function clearForm () {
+
+    form.reset();
+
+    // Eliminar clases y estilos adicionales
+    document.querySelectorAll('.form_group').forEach(group => {
+        group.classList.remove('form_group_true', 'form_group_false');
+    });
+
+    document.querySelectorAll('.form_icon').forEach(icon => {
+        icon.classList.remove('fa-check-circle', 'fa-times-circle');
+    });
+
+    document.querySelectorAll('.msg_input_error').forEach(msg => {
+        msg.classList.remove('msg_input_error-active');
+    });
+    
 }
 
 const validExpresionFields = () => {
@@ -65,69 +86,55 @@ form.addEventListener('submit', function (e) {
 
     } else {
 
-        // $.ajax({
+        $.ajax({
 
-        //     type: 'post',
-        //     url: '../../controller/php/formLogin.php',
-        //     dataType: 'json',
-        //     contentType: 'application/json',
-        //     async: true,
-        //     data: {username:username, password:password},
-        //     success: function(data) {
+            method: 'POST',
+            url: '../../controller/php/formLogin.php',
+            data: {username: username, password: password},
+            dataType: "json",
+            success: function(data) {
 
-        //         console.log(data);
+                if (data.success == true) {
+                    
+                    Swal.fire({
+                        title: '¡Exito!',
+                        text: data.msg,
+                        icon: 'success',
+                        showConfirmButton: false, 
+                        timer: 1800
+                    });
 
-        //         Swal.fire({
-        //             title: '¡Exito!',
-        //             text: 'Inciando Sesion. Espera un Momento.' + data,
-        //             icon: 'success',
-        //             showConfirmButton: false, 
-        //             timer: 1500
-        //         });
+                    setTimeout(() => {
 
-        //     }
-        // });
+                        window.location.href = "../../views/user_logged/start_page.php";
 
-        $.post('../../controller/php/formLogin.php', {
-            username: username,
-            password: password
-        }, function () {
+                    }, 2000);
 
-            Swal.fire({
-                title: '¡Exito!',
-                text: 'Datos Enviados', //! LEER ARCHIVO JSON
-                icon: 'success',
-                showConfirmButton: false, 
-                timer: 1500
-        });
+                } else {
 
-        })
+                    Swal.fire({
+                        title: '¡Error!',
+                        text: 'Error: ' + data.msg,
+                        icon: 'error',
+                        showConfirmButton: false, 
+                        timer: 1800  
+                    });
 
+                }
+            }
+        }) 
     }    
 })
 
 //Detectar Cambios Formulario
 inputs.forEach((input) => {
     input.addEventListener('keyup', validFormLogin);
-    // input.addEventListener('input', validFormLogin);
     input.addEventListener('blur', validFormLogin);
 });
 
-//Limpiar Campos y Estilos Formulario
-const btnClear = document.querySelector('#btn_clear');
+// Boton Lipiar Campos
 btnClear.addEventListener('click', () => {
-    form.reset();
+    
+    clearForm();
 
-    // Eliminar clases y estilos adicionales
-    document.querySelectorAll('.form_group').forEach(group => {
-        group.classList.remove('form_group_true', 'form_group_false');
-    });
-
-    document.querySelectorAll('.form_icon').forEach(icon => {
-        icon.classList.remove('fa-check-circle', 'fa-times-circle');
-    });
-
-    document.querySelectorAll('.msg_input_error').forEach(msg => {
-        msg.classList.remove('msg_input_error-active');
-    });
 });
