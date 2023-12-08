@@ -34,7 +34,7 @@ require("../../controller/php/querys.php");
             <h2 class="subtitle">Realizar Pagos</h2>
             <p>Completa el Formulario Correctamente</p>
         </div>
-        <form action="../../controller/php/formPaymentsUser.php" method="post" id="form_pay" class="form_pay">
+        <form id="form_pay" class="form_pay">
             <!-- Servicio Seleccionado -->
             <div class="form_group" id="group_select">
                 <label for="servicio" class="form_label">Seleccionar el Servicio a Pagar</label>
@@ -67,8 +67,10 @@ require("../../controller/php/querys.php");
     <footer>
         <p>&copy; 2023 Vega's Bank - Todos los derechos reservados</p>
     </footer>
-    <script src="../../js/form_payment.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/e9597f5981.js" crossorigin="anonymous"></script>
+    <script src="../../controller/js/form_payment.js"></script>
 </body>
 </html>

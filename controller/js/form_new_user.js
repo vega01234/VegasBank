@@ -80,6 +80,7 @@ const validField = (expresion, input, field) => {
     }
 }
 
+// Envio de Datos por Ajax al Controlador
 form.addEventListener('submit', function (e){
 
     e.preventDefault();
@@ -117,6 +118,7 @@ form.addEventListener('submit', function (e){
                         icon: 'success',
                         showConfirmButton: false, 
                         timer: 1800
+                        
                     });
 
                     setTimeout(() => {

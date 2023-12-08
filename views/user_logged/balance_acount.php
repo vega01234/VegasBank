@@ -4,14 +4,6 @@ require("../../controller/php/database.php");
 require("../../controller/php/check_loggin.php");
 require("../../controller/php/querys.php");
 
-
-
-// require("../../controller/php/database.php");
-// require("../../controller/php/check_loggin.php");
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,14 +45,13 @@ require("../../controller/php/querys.php");
             <p class="text">A continuacion, encontraras un filtro para realizar la busqueda de los registros por fechas.</p>
         </article>
     </section>
-    <!-- Parte General -->
     <!-- Buscador por Fechas -->
     <div class="div_forms" id="div_forms">
         <div class="header_forms">
             <h2 class="subtitle">Buscador por Fechas</h2>
             <p>Selecciona dos Fechas para Realizar la Busqueda.</p>
         </div>
-        <form method="post">
+        <form method="post" id="form_search">
             <!-- Primer Fecha -->
             <div class="form_group" id="group_date1">
                 <label for="date1" class="form_label">Ingresa la Primer Fecha</label>
@@ -109,5 +100,7 @@ require("../../controller/php/querys.php");
     <footer>
         <p>&copy; 2023 Vega's Bank - Todos los derechos reservados</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

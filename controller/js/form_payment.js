@@ -1,5 +1,6 @@
 const form = document.getElementById('form_pay');
 const inputs = document.querySelectorAll('#form_pay input');
+const btnLimpiar = document.querySelector('.form_btn[type="reset"]');
 
 const validExpresion = {
     monto: /^[+]?\d+(\.\d{1,2})?$/
@@ -15,6 +16,26 @@ const validForm = (e) => {
             validField(validExpresion.monto, e.target, 'monto');
         break;
     }
+
+}
+
+// Funcion Limpiar Formulario
+function clearForm() {
+
+    form.reset();
+
+    // Eliminar clases y estilos adicionales
+    document.querySelectorAll('.form_group').forEach(group => {
+        group.classList.remove('form_group_true', 'form_group_false');
+    });
+
+    document.querySelectorAll('.form_icon').forEach(icon => {
+        icon.classList.remove('fa-check-circle', 'fa-times-circle');
+    });
+
+    document.querySelectorAll('.msg_input_error').forEach(msg => {
+        msg.classList.remove('msg_input_error-active');
+    });
 
 }
 
@@ -36,25 +57,50 @@ const validField = (expresion, input, field) => {
     }
 }
 
+// Envio de Datos por Ajax al Controlador
+form.addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    var monto = $('#monto').val();
+
+
+    if (monto === ''){
+
+        Swal.fire({
+            title: '¡Error al Llenar el Formulario!',
+            text: 'Debes Llenar Correctamente el Formulario',
+            icon: 'error', 
+            confirmButtonText: 'Entendido'
+        });
+
+    } else {
+
+        $.ajax ({
+
+            method:'POST',
+            url: '../../controller/php/formPaymentsUser.php',
+            data: {monto: monto},
+            dataType: 'json',
+            success: function (data) {
+
+                
+
+            } 
+
+        });
+
+    }
+
+})
+
 inputs.forEach((input)=>{
     input.addEventListener('keyup', validForm);
     input.addEventListener('blur', validForm);
 });
 
-const btnLimpiar = document.querySelector('.form_btn[type="reset"]');
 btnLimpiar.addEventListener('click', () => {
-    form.reset();
+    
+    clearForm();
 
-    // Eliminar clases y estilos adicionales
-    document.querySelectorAll('.form_group').forEach(group => {
-        group.classList.remove('form_group_true', 'form_group_false');
-    });
-
-    document.querySelectorAll('.form_icon').forEach(icon => {
-        icon.classList.remove('fa-check-circle', 'fa-times-circle');
-    });
-
-    document.querySelectorAll('.msg_input_error').forEach(msg => {
-        msg.classList.remove('msg_input_error-active');
-    });
 });

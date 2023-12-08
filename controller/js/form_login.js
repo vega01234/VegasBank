@@ -65,6 +65,7 @@ const validFieldLogin = (expresion, input, field) => {
     }
 }
 
+// Envio de Datos por Ajax al Controlador
 form.addEventListener('submit', function (e) {
     
     e.preventDefault();
