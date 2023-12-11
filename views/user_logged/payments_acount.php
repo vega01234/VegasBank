@@ -36,11 +36,11 @@ require("../../controller/php/querys.php");
         </div>
         <form id="form_pay" class="form_pay">
             <!-- Servicio Seleccionado -->
-            <div class="form_group" id="group_select">
-                <label for="servicio" class="form_label">Seleccionar el Servicio a Pagar</label>
+            <div class="form_group" id="group_servicePay">
+                <label for="servicePay" class="form_label">Seleccionar el Servicio a Pagar</label>
                 <div class="form_div_input">
-                    <select name="servicio" id="servicio" class="form_input">
-                        <option disabled>SELECCIONA UNA OPCION</option>
+                    <select name="servicePay" id="servicePay" class="form_input">
+                        <option selected disabled>SELECCIONA UNA OPCION</option>
                         <option value="INTERNET">Internet</option>
                         <option value="ELECTRICIDAD">Electricidad</option>
                         <option value="AGUA">Agua</option>
@@ -48,10 +48,10 @@ require("../../controller/php/querys.php");
                 </div>
             </div>
             <!-- Monto a Pagar -->
-            <div class="form_group" id="group_monto">
-                <label for="monto" class="form_label">Monto a Pagar</label>
+            <div class="form_group" id="group_amountPay">
+                <label for="amountPay" class="form_label">Monto a Pagar</label>
                 <div class="form_div_input">
-                    <input type="text" class="form_input" name="monto" id="monto" required>
+                    <input type="text" class="form_input" name="amountPay" id="amountPay">
                     <i class="form_icon fas fa-times-circle"></i>
                 </div>
                 <p class="msg_input_error">Por favor, ingrese un monto válido (números positivos con hasta dos decimales).</p>

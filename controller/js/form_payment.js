@@ -3,17 +3,21 @@ const inputs = document.querySelectorAll('#form_pay input');
 const btnLimpiar = document.querySelector('.form_btn[type="reset"]');
 
 const validExpresion = {
-    monto: /^[+]?\d+(\.\d{1,2})?$/
+    amountPay: /^[+]?\d+(\.\d{1,2})?$/
 }
 
 const fields = {
-    monto: false
+    amountPay: false
 }
 
+const validExpresionFields = () => {
+    return Object.values(fields).every(field => field === true);
+}
 const validForm = (e) => {
+    
     switch (e.target.name) {
-        case "monto":
-            validField(validExpresion.monto, e.target, 'monto');
+        case "amountPay":
+            validField(validExpresion.amountPay, e.target, 'amountPay');
         break;
     }
 
@@ -62,10 +66,11 @@ form.addEventListener('submit', function (e) {
 
     e.preventDefault();
 
-    var monto = $('#monto').val();
+    var servicePay = $('#servicePay').val();
+    var amountPay = $('#amountPay').val();
 
 
-    if (monto === ''){
+    if (amountPay === '' || servicePay === null || !validExpresionFields()) {
 
         Swal.fire({
             title: '¡Error al Llenar el Formulario!',
@@ -78,13 +83,46 @@ form.addEventListener('submit', function (e) {
 
         $.ajax ({
 
-            method:'POST',
+            method: 'POST',
             url: '../../controller/php/formPaymentsUser.php',
-            data: {monto: monto},
+            data: {servicePay:servicePay, amountPay:amountPay},
             dataType: 'json',
             success: function (data) {
 
-                
+                if(data.success === true) {
+                    
+                    console.log('Bien');
+
+                    Swal.fire({
+                        title: '¡Exito!',
+                        text: data.msg,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1800
+                        
+                    });
+
+                    clearForm();
+
+                    setTimeout(() => {
+
+                        window.location.href = "../../views/user_logged/payments_acount.php";
+
+                    }, 1900);
+
+                    //! Añadir Boton Confirmar o Hacer otro Pago
+
+                } else {
+
+                    Swal.fire({
+                        title: '¡Error!',
+                        text: 'Error: ' + data.msg,
+                        icon: 'error',
+                        showConfirmButton: false, 
+                        timer: 1800  
+                    });
+
+                }
 
             } 
 

@@ -102,11 +102,13 @@ form.addEventListener('submit', function (e) {
                         timer: 1800
                     });
 
+                    clearForm();
+                    
                     setTimeout(() => {
 
                         window.location.href = "../../views/user_logged/start_page.php";
 
-                    }, 2000);
+                    }, 1900);
 
                 } else {
 

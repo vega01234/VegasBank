@@ -116,16 +116,18 @@ form.addEventListener('submit', function (e){
                         title: '¡Exito!',
                         text: data.msg,
                         icon: 'success',
-                        showConfirmButton: false, 
+                        showConfirmButton: false,
                         timer: 1800
                         
                     });
+
+                    clearForm();
 
                     setTimeout(() => {
 
                         window.location.href = "../../views/general/login.php";
 
-                    }, 2000);
+                    }, 1900);
 
                 } else {
 
