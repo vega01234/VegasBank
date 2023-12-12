@@ -32,63 +32,84 @@ function clearForm () {
   
 }
 
-// // Enviar Datos por Ajax al Controlador
+// Enviar Datos por Ajax al Controlador
+$('#search_group').on('change', function (e) {
+
+  var date1 = $('#date1').val();
+  var date2 = $('#date2').val();
+
+  $.ajax({
+  
+    method: 'POST',
+    url: '../../controller/php/filtersDate.php',
+    data: {date1:date1, date2:date2},
+    dataType: "json",
+    success: function (data) {
+
+      
+
+    }
+
+  });
+
+});
+
 // form.addEventListener('submit', function (e) {
 
-//   e.preventDefault();
+  // e.preventDefault();
 
-//   var date1 = $('#date1').val();
-//   var date2 = $('#date2').val();
+  // var date1 = $('#date1').val();
+  // var date2 = $('#date2').val();
 
-//   if(date1 === '' || date2 === '') {
+  // if(date1 === '' || date2 === '') {
 
-//     Swal.fire({
-//       title: '¡Error al Llenar el Formulario!',
-//       text: 'Debes Llenar Correctamente el Formulario',
-//       icon: 'error', 
-//       confirmButtonText: 'Entendido'
-//     });
+    // Swal.fire({
+    //   title: '¡Error al Llenar el Formulario!',
+    //   text: 'Debes Llenar Correctamente el Formulario',
+    //   icon: 'error', 
+    //   confirmButtonText: 'Entendido'
+    // });
 
-//   } else {
+  // } else {
 
-//     $.ajax ({
+  //   $.ajax ({
 
-//       method: 'POST',
-//       url: '../../controller/php/filtersDate.php',
-//       data: {date1:date1, date2:date2},
-//       dataType: "json",
-//       success: function (data) {
+  //     method: 'POST',
+  //     url: '../../controller/php/filtersDate.php',
+  //     data: {date1:date1, date2:date2},
+  //     dataType: "json",
+  //     success: function (data) {
 
-//         console.log('Empieza');
-//         Swal.fire({
-//           title: '¡Exito!',
-//           text: data.msg,
-//           icon: 'success',
-//           showConfirmButton: false, 
-//           timer: 1800
-//         });
+  //       console.log('Empieza');
+  //       Swal.fire({
+  //         title: '¡Exito!',
+  //         text: data.msg,
+  //         icon: 'success',
+  //         showConfirmButton: false, 
+  //         timer: 1800
+  //       });
 
-//         clearForm();
+  //       clearForm();
         
-//         setTimeout(() => {
+  //       setTimeout(() => {
 
-//             window.location.href = "../../views/user_logged/start_page.php";
+  //           window.location.href = "../../views/user_logged/start_page.php";
 
-//         }, 1900);
+  //       }, 1900);
 
-//       }
+  //     }
 
-//     });
+  //   });
 
-//   }
+  // }
 
 // });
 
-// // Detercar Cambior en el Formulario
-// inputs.forEach((input) => {
-//   input.addEventListener('keyup');
-//   input.addEventListener('blur');
-// });
+// Detercar Cambior en el Formulario
+inputs.forEach((input) => {
+  input.addEventListener('keyup');
+  input.addEventListener('blur');
+});
 
 // Limpiar Inputs del Formulario 
 btnClear.addEventListener('click', () => {

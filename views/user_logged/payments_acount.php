@@ -40,7 +40,7 @@ require("../../controller/php/querys.php");
                 <label for="servicePay" class="form_label">Seleccionar el Servicio a Pagar</label>
                 <div class="form_div_input">
                     <select name="servicePay" id="servicePay" class="form_input">
-                        <option selected disabled>SELECCIONA UNA OPCION</option>
+                        <option selected disabled>SELECCIONAR...</option>
                         <option value="INTERNET">Internet</option>
                         <option value="ELECTRICIDAD">Electricidad</option>
                         <option value="AGUA">Agua</option>

@@ -11,6 +11,7 @@ require("../../controller/php/querys.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saldo de Cuenta</title>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <link rel="stylesheet" href="../../resources/css/style.css">
 </head>
 <body>
@@ -46,57 +47,48 @@ require("../../controller/php/querys.php");
         </article>
     </section>
     <!-- Buscador por Fechas -->
-    <div class="div_forms" id="div_forms">
+    <div class="div_search" id="div_search">
         <div class="header_forms">
-            <h2 class="subtitle">Buscador por Fechas</h2>
-            <p>Selecciona dos Fechas para Realizar la Busqueda.</p>
+            <h2 class="subtitle">Tabla de Movimientos</h2>
         </div>
-        <form method="post" id="form_search">
-            <!-- Primer Fecha -->
-            <div class="form_group" id="group_date1">
-                <label for="date1" class="form_label">Ingresa la Primer Fecha</label>
+        <!-- Seleccionar Fecha o Ingresar Datos -->
+        <form class="search_group" id="search_group">
+            <div class="inputs_dates">
+                <label for="date1" class="src_label">Fecha Inicial</label>
                 <div class="form_div_input">
-                    <input type="date" class="form_input" name="date1" id="date1" >
-                    <i class="form_icon fas fa-times-circle"></i>
+                    <input type="date" class="search" name="date1" id="date1">
                 </div>
-                <p class="msg_input_error">Ingresa una Fecha Valida.</p>
             </div>
-            <!-- Segunda Fecha -->
-            <div class="form_group" id="group_date2">
-                <label for="date2" class="form_label">Ingresa la Segunda Fecha</label>
+            <div class="inputs_dates">
+                <label for="date2" class="src_label">Fecha Final</label>
                 <div class="form_div_input">
-                    <input type="date" class="form_input" name="date2" id="date2" >
-                    <i class="form_icon fas fa-times-circle"></i>
+                    <input type="date" class="search" name="date2" id="date2">
                 </div>
-                <p class="msg_input_error">Ingresa una Fecha Valida.</p>
             </div>
-            <!-- Mensaje Error -->
-            <div class="form_msg_erorr" id="form_msg_erorr">
-                <p><i class="fa-solid fa-circle-exclamation"></i> <b>Error: </b> Por favor rellena correctamente el formulario.</p>
-            </div>
-            <!-- Boton -->
-            <div class="form_btns_send">
-                <button type="submit" class="form_btn" name="date_search">Buscar Registros</button>
-                <button type="reset" class="form_btn" id="btn_clear">Limpiar</button>
-                <p class="form_msg_succes" id="form_msg_succes">El usuario se registro exitosamente.</p>
+            <div class="div_src">
+                <label for="search" class="src_label">Buscador por Servicios</label>
+                <div class="form_div_input">
+                    <input type="text" class="search" name="search" id="search" placeholder="Buscar...">
+                </div>
             </div>
         </form>
+        <br>
+        <!-- Tabla Dinamica -->
+        <div class="container_table">
+            <table class="his_mov">
+                <tr>
+                    <th class="head_celd">Tipo de Movimiento</th>
+                    <th class="head_celd">Monto (MXN)</th>
+                    <th class="head_celd">Fecha</th>
+                </tr>
+                <?php include("../../controller/php/filtersDate.php"); ?>
+            </table>
+        </div>
+        <br>
+        <div class="form_btns_send">
+        <button type="reset" class="form_btn" id="btn_clear">Limpiar</button>
+        </div>
     </div>
-    <!-- Tabla Resultados -->
-    <br>
-    <h2 class="subtitle center">Tabla de Movimientos</h2>
-    <br>
-    <div class="container_table">
-        <table class="his_mov">
-            <tr>
-                <th class="head_celd">Tipo de Movimiento</th>
-                <th class="head_celd">Monto (MXN)</th>
-                <th class="head_celd">Fecha</th>
-            </tr>
-            <?php include("../../controller/php/filtersDate.php"); ?>
-        </table>
-    </div>
-    <!-- Pie de Pagina -->
     <footer>
         <p>&copy; 2023 Vega's Bank - Todos los derechos reservados</p>
     </footer>
