@@ -91,56 +91,56 @@ form.addEventListener('submit', function (e) {
 
                 if(data.success === true) {
                     
-                    // Swal.fire({
-                    //     title: '¡Exito!',
-                    //     text: data.msg,
-                    //     icon: 'success',
-                    //     showConfirmButton: false,
-                    //     timer: 1800
+                    Swal.fire({
+                        title: '¡Exito!',
+                        text: data.msg,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1800
                         
-                    // });
+                    });
                     
-                    const swalWithBootstrapButtons = Swal.mixin({
-                        customClass: {
-                          confirmButton: "btn btn-success",
-                          cancelButton: "btn btn-danger"
-                        },
-                        buttonsStyling: false
-                      });
-                      swalWithBootstrapButtons.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonText: "Yes, delete it!",
-                        cancelButtonText: "No, cancel!",
-                        reverseButtons: true
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                          swalWithBootstrapButtons.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                          });
-                        } else if (
-                          /* Read more about handling dismissals below */
-                          result.dismiss === Swal.DismissReason.cancel
-                        ) {
-                          swalWithBootstrapButtons.fire({
-                            title: "Cancelled",
-                            text: "Your imaginary file is safe :)",
-                            icon: "error"
-                          });
-                        }
-                      });
+                    // const swalWithBootstrapButtons = Swal.mixin({
+                    //     customClass: {
+                    //       confirmButton: "btn btn-success",
+                    //       cancelButton: "btn btn-danger"
+                    //     },
+                    //     buttonsStyling: false
+                    //   });
+                    //   swalWithBootstrapButtons.fire({
+                    //     title: "Are you sure?",
+                    //     text: "You won't be able to revert this!",
+                    //     icon: "warning",
+                    //     showCancelButton: true,
+                    //     confirmButtonText: "Yes, delete it!",
+                    //     cancelButtonText: "No, cancel!",
+                    //     reverseButtons: true
+                    //   }).then((result) => {
+                    //     if (result.isConfirmed) {
+                    //       swalWithBootstrapButtons.fire({
+                    //         title: "Deleted!",
+                    //         text: "Your file has been deleted.",
+                    //         icon: "success"
+                    //       });
+                    //     } else if (
+                    //       /* Read more about handling dismissals below */
+                    //       result.dismiss === Swal.DismissReason.cancel
+                    //     ) {
+                    //       swalWithBootstrapButtons.fire({
+                    //         title: "Cancelled",
+                    //         text: "Your imaginary file is safe :)",
+                    //         icon: "error"
+                    //       });
+                    //     }
+                    //   });
 
                     clearForm();
 
-                    // setTimeout(() => {
+                    setTimeout(() => {
 
-                    //     window.location.href = "../../views/user_logged/payments_acount.php";
+                        window.location.href = "../../views/user_logged/payments_acount.php";
 
-                    // }, 1900);
+                    }, 1900);
 
                     //! Añadir Boton Confirmar o Hacer otro Pago
 

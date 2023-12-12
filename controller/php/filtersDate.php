@@ -4,8 +4,6 @@ require("../../controller/php/database.php");
 
 if (isset($_POST['date_search'])) {
 
-
-    echo 'Hola Mundo';
     $date1 = date("Y-m-d", strtotime($_POST['date1']));
     $date2 = date("Y-m-d", strtotime($_POST['date2']));
     $queryDate = $conexion->prepare("SELECT * FROM movimientos WHERE id_user = $id_session  AND fecha BETWEEN '$date1' AND '$date2'");
