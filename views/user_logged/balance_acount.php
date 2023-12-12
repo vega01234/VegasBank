@@ -56,7 +56,7 @@ require("../../controller/php/querys.php");
             <div class="form_group" id="group_date1">
                 <label for="date1" class="form_label">Ingresa la Primer Fecha</label>
                 <div class="form_div_input">
-                    <input type="date" class="form_input" name="date1" id="date1" required>
+                    <input type="date" class="form_input" name="date1" id="date1" >
                     <i class="form_icon fas fa-times-circle"></i>
                 </div>
                 <p class="msg_input_error">Ingresa una Fecha Valida.</p>
@@ -65,7 +65,7 @@ require("../../controller/php/querys.php");
             <div class="form_group" id="group_date2">
                 <label for="date2" class="form_label">Ingresa la Segunda Fecha</label>
                 <div class="form_div_input">
-                    <input type="date" class="form_input" name="date2" id="date2" required>
+                    <input type="date" class="form_input" name="date2" id="date2" >
                     <i class="form_icon fas fa-times-circle"></i>
                 </div>
                 <p class="msg_input_error">Ingresa una Fecha Valida.</p>
@@ -77,7 +77,7 @@ require("../../controller/php/querys.php");
             <!-- Boton -->
             <div class="form_btns_send">
                 <button type="submit" class="form_btn" name="date_search">Buscar Registros</button>
-                <button type="reset" class="form_btn">Limpiar</button>
+                <button type="reset" class="form_btn" id="btn_clear">Limpiar</button>
                 <p class="form_msg_succes" id="form_msg_succes">El usuario se registro exitosamente.</p>
             </div>
         </form>

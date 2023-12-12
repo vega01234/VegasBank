@@ -134,7 +134,5 @@ inputs.forEach((input) => {
 
 // Boton Limpiar Campos
 btnClear.addEventListener('click', () => {
-    
     clearForm();
-
 });
