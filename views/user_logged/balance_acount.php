@@ -81,8 +81,9 @@ require("../../controller/php/querys.php");
                     <th class="head_celd">Monto (MXN)</th>
                     <th class="head_celd">Fecha</th>
                 </tr>
-                <tbody id="data_content"></tbody>
-                <?php include("../../controller/php/filtersDate.php"); ?>
+                <tr>
+                    <th></th>
+                </tr>
             </table>
         </div>
     </div>

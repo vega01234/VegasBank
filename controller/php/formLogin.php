@@ -26,7 +26,6 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 
         if(password_verify($password, $resultLogin['password'])) {
         
-            header('formLogin.php');
             $nameLogin = $resultLogin['name'];
             $_SESSION['user_id'] = $resultLogin['id'];
             $validLogin['success'] = true;
