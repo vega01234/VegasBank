@@ -65,12 +65,12 @@ require("../../controller/php/querys.php");
                     <input type="date" class="search" name="date2" id="date2">
                 </div>
             </div>
-            <div class="div_src">
+            <!-- <div class="div_src">
                 <label for="search" class="src_label">Buscador por Servicios</label>
                 <div class="form_div_input">
                     <input type="text" class="search" name="search" id="search" placeholder="Buscar...">
                 </div>
-            </div>
+            </div> -->
         </form>
         <br>
         <!-- Tabla Dinamica -->
