@@ -52,7 +52,7 @@ require("../../controller/php/querys.php");
             <h2 class="subtitle">Tabla de Movimientos</h2>
         </div>
         <!-- Seleccionar Fecha o Ingresar Datos -->
-        <form class="search_group" id="search_group">
+        <form class="search_group" id="form_search">
             <div class="inputs_dates">
                 <label for="date1" class="src_label">Fecha Inicial</label>
                 <div class="form_div_input">
@@ -81,12 +81,9 @@ require("../../controller/php/querys.php");
                     <th class="head_celd">Monto (MXN)</th>
                     <th class="head_celd">Fecha</th>
                 </tr>
+                <tbody id="data_content"></tbody>
                 <?php include("../../controller/php/filtersDate.php"); ?>
             </table>
-        </div>
-        <br>
-        <div class="form_btns_send">
-        <button type="reset" class="form_btn" id="btn_clear">Limpiar</button>
         </div>
     </div>
     <footer>

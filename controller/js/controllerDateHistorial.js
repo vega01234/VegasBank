@@ -2,6 +2,7 @@
 const form = document.getElementById('form_search');
 const inputs = document.querySelectorAll('#form_search input');
 const btnClear = document.querySelector('#btn_clear');
+const tbody = document.getElementById('#data_content');
 
 const fields = {
   date1: false,
@@ -33,26 +34,50 @@ function clearForm () {
 }
 
 // Enviar Datos por Ajax al Controlador
-$('#search_group').on('change', function (e) {
+// $('#search_group').on('change', function (e) {
+
+  // var date1 = $('#date1').val();
+  // var date2 = $('#date2').val();
+
+//   $.ajax({
+  
+//     method: 'POST',
+//     url: '../../controller/php/filtersDate.php',
+//     data: {date1:date1, date2:date2},
+//     dataType: "json",
+//     success: function (data) {
+
+      
+
+//     }
+
+//   });
+
+// });
+
+form.addEventListener('change', function (e) {
+
+  e.preventDefault();
 
   var date1 = $('#date1').val();
   var date2 = $('#date2').val();
 
-  $.ajax({
-  
+  $.ajax ({
+
     method: 'POST',
     url: '../../controller/php/filtersDate.php',
     data: {date1:date1, date2:date2},
     dataType: "json",
     success: function (data) {
 
-      
 
+    }, error: function (message) {
+        console.log(message);
     }
 
   });
 
-});
+})
 
 // form.addEventListener('submit', function (e) {
 
