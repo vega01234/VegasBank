@@ -39,7 +39,6 @@ form.addEventListener('change', function (e) {
 
   var date1 = $('#date1').val();
   var date2 = $('#date2').val();
-  var body = $('#data_content');
 
   $.ajax ({
 
@@ -49,10 +48,8 @@ form.addEventListener('change', function (e) {
     dataType: "json",
     success: function (data) {
 
-      body.html('Hola Mundo');
+      $("#results_search").empty().append(data);
 
-    }, error: function (message) {
-        console.log(message);
     }
 
   });
@@ -111,10 +108,10 @@ form.addEventListener('change', function (e) {
 // });
 
 // Detercar Cambior en el Formulario
-inputs.forEach((input) => {
-  input.addEventListener('keyup');
-  input.addEventListener('blur');
-});
+// inputs.forEach((input) => {
+//   input.addEventListener('keyup');
+//   input.addEventListener('blur');
+// });
 
 // Limpiar Inputs del Formulario 
 btnClear.addEventListener('click', () => {

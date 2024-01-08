@@ -74,16 +74,14 @@ require("../../controller/php/querys.php");
         </form>
         <br>
         <!-- Tabla Dinamica -->
-        <div class="container_table">
+        <div class="container_table" id="container_table">
             <table class="his_mov">
                 <tr>
                     <th class="head_celd">Tipo de Movimiento</th>
                     <th class="head_celd">Monto (MXN)</th>
                     <th class="head_celd">Fecha</th>
                 </tr>
-                <tr>
-                    <th></th>
-                </tr>
+                <tbody id="results_search"></tbody>
             </table>
         </div>
     </div>
