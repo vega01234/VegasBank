@@ -54,7 +54,7 @@ form.addEventListener('change', function (e) {
 
   });
 
-})
+});
 
 // Limpiar Inputs del Formulario 
 btnClear.addEventListener('click', () => {
