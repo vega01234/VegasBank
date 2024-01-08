@@ -30,8 +30,6 @@ if (isset($_POST['date1']) && isset($_POST['date2'])) {
 
     echo json_encode($html);
 
-} else {
-
-}
+} 
 
 ?>
